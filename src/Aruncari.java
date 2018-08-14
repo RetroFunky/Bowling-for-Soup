@@ -31,7 +31,7 @@ public class Aruncari {
 	    esteRelevant2 = false;
 	}
 
-	public int actualizeazaScor(int popiceDaramate) { // @TODO de folosit antecedenti in loc de formule urate
+	public void actualizeazaScor(int popiceDaramate) { // @TODO de folosit antecedenti in loc de formule urate
 		Frame frameCurent = frames[crtFrame];
 
 		if (esteRelevant1) { // actualizez scor pentru strike / spare din frame-ul trecut
