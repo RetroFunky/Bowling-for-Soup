@@ -65,6 +65,7 @@ public class Aruncari {
 			if(firstNextValue >=0 && secondNextValue>=0) {
 				int scorFrameCurent = 10+ scorFrameAnterior + firstNextValue + secondNextValue;
 				frameCurent.setScor(scorFrameCurent);
+				this.scorFinal = scorFrameCurent;
 				this.crtScoreFrame++;
 				return;
 			}
@@ -80,6 +81,7 @@ public class Aruncari {
 			if(nextValue >= 0) {
 				int scorFrameCurent = 10 + scorFrameAnterior + nextValue;
 				frameCurent.setScor(scorFrameCurent);
+				this.scorFinal=scorFrameCurent;
 				
 				this.crtScoreFrame++;
 				return;
@@ -93,6 +95,7 @@ public class Aruncari {
 		if(primaAruncare >= 0 && aDouaAruncare >=0) {
 			int scorFrameCurent = scorFrameAnterior + frameCurent.getPrimaAruncare() + frameCurent.getADouaAruncare();
 			frameCurent.setScor(scorFrameCurent);
+			this.scorFinal=scorFrameCurent;
 			this.crtScoreFrame++;
 		}
 		
@@ -146,7 +149,7 @@ public class Aruncari {
 			this.aruncaUltimeleMingi(popiceDaramate);
 			return;
 		}*/
-		System.out.println(crtFrame);
+		//System.out.println(crtFrame);
 		Frame frameCurent = frames[crtFrame];
 		
 		if(popiceDaramate == 10 && frameCurent.getPrimaAruncare()<0) {
@@ -177,6 +180,9 @@ public class Aruncari {
 		actualizeazaScor();
 		
 	
+	}
+	public int getScorFinal() {
+		return this.scorFinal;
 	}
 	public boolean getEsteGata() {
 		return this.esteGata;

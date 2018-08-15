@@ -1,24 +1,19 @@
-import java.util.Random;
 import java.util.Vector;
-import java.lang.Integer;
-public class RandomInputGenerator {
+import java.util.Scanner;
+public class ModificaJoc {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		
-		
+		Scanner scanner= new Scanner(System.in);
 		Joc joc= new Joc();
 		RandomInput ri= new RandomInput();
-		
-		Vector<Integer> vector= ri.getVector(); 
+		Vector<Integer> vector= ri.getVector();
 		System.out.print("Input random aruncari:{");
 		for(int i=0;i<vector.size() || joc.getEsteGata();i++) { //
 			System.out.print(vector.get(i)+",");
 		
 		}
 		System.out.println("}");
-		
 		System.out.println();
 		
 		
@@ -31,18 +26,24 @@ public class RandomInputGenerator {
 			}
 		}
 	
-		joc.printJoc();
-		System.out.println();
-		System.out.println("ScorFinal: "+joc.getScorFinal());
-		// scorFinal se actualizeaza la fiecare aruncare! 
-	
-		
-		
-		
-		
-		
-		
-		
-	}
 
+	joc.printJoc();
+	
+	int frameIndex,aruncare,popiceDaramate;
+	frameIndex=scanner.nextInt();
+	aruncare=scanner.nextInt();
+	popiceDaramate=scanner.nextInt();
+	try {
+		joc.modificaFrameJoc(frameIndex, aruncare, popiceDaramate);
+	}
+	catch(ModificareInvalida modificare){
+		System.out.println("Modificare invalida!!!");
+	}
+	
+	joc.printJoc();
+	
+	
+	}
+	
+	
 }
